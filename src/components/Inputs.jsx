@@ -8,7 +8,6 @@ class Inputs extends Component {
         capShapeInput:"",
         capSurfaceInput:"",
         capColorInput:"",
-        capBruisesInput:"",
         odorInput:"",
         gillColorInput:"",
         gillSpacingInput:"",
@@ -26,6 +25,7 @@ class Inputs extends Component {
         inputText9:"Population",
         inputText10:"Gill size",
         id:null,
+        isChanged:false
     }
     resetId(){
         this.setState({
@@ -54,12 +54,6 @@ class Inputs extends Component {
             this.setState({
                 capColorInput:input,
                 inputText3:text
-            })
-        }
-        if(this.state.id===4){
-            this.setState({
-                capBruisesInput:input,
-                inputText4:text
             })
         }
         if(this.state.id===5){
@@ -98,10 +92,13 @@ class Inputs extends Component {
                 inputText10:text
             })
         }
-        this.resetId()
+        this.resetId();
+        this.setState({
+            isChanged : true
+        });
     }
     SubmitRequest=()=>{
-        this.props.sendData(this.state.capShapeInput,this.state.capSurfaceInput,this.state.capColorInput,this.state.capBruisesInput,this.state.odorInput,this.state.gillColorInput,this.state.gillSpacingInput,this.state.habitatInput,
+        this.props.sendData(this.state.capShapeInput,this.state.capSurfaceInput,this.state.capColorInput,this.state.odorInput,this.state.gillColorInput,this.state.gillSpacingInput,this.state.habitatInput,
             this.state.populationInput,this.state.gillSizeInput);
     }
     render() {
@@ -169,23 +166,6 @@ class Inputs extends Component {
                                 <p className="dropdown-item" onClick={()=>{this.updateInput("e","Red")}}>Red</p>
                                 <p className="dropdown-item" onClick={()=>{this.updateInput("w","White")}}>White</p>
                                 <p className="dropdown-item" onClick={()=>{this.updateInput("y","Yellow")}}>Yellow</p>
-                                <p className="dropdown-item" onClick={()=>{this.updateInput("","Don't know")}}>Don't know</p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <p>Bruises</p>
-                            </div>
-                            <div className="col">
-                        <div className="dropdown">
-                            <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onFocus={()=>{this.updateId(4)}}>
-                                {this.state.inputText4}
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <p className="dropdown-item" onClick={()=>{this.updateInput("t","Bruises")}}>Bruises</p>
-                                <p className="dropdown-item" onClick={()=>{this.updateInput("f","No bruises")}}>No bruises</p>
                                 <p className="dropdown-item" onClick={()=>{this.updateInput("","Don't know")}}>Don't know</p>
                             </div>
                             </div>
@@ -321,7 +301,7 @@ class Inputs extends Component {
                         </div>
                         </div>
                         <div className="topbuffer">
-                            <button className="btn-lg btn-success" onClick={this.SubmitRequest}>
+                            <button className="btn-lg btn-success" disabled={this.state.isChanged ? false : true} onClick={this.SubmitRequest}>
                                 Submit
                             </button>
                         </div>
@@ -351,7 +331,7 @@ const mapStateToProps = state => {
   
   const mapStateToDispatch = dispatch => {
     return {
-      sendData: (input1,input2,input3,input4,input5,input6,input7,input8,input9,input10) => dispatch(fetchResponse(input1,input2,input3,input4,input5,input6,input7,input8,input9,input10))
+      sendData: (input1,input2,input3,input5,input6,input7,input8,input9,input10) => dispatch(fetchResponse(input1,input2,input3,input5,input6,input7,input8,input9,input10))
     };
 };
 

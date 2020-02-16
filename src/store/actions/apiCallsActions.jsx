@@ -9,8 +9,8 @@ myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Accept", "application/json");
 
 
-export const fetchResponse = (input1,input2,input3,input4,input5,input6,input7,input8,input9,input10) =>{ 
-  var raw = JSON.stringify({"Inputs":{"input1":{"ColumnNames":["class","cap-shape","cap-surface","cap-color","bruises","odor","gill-attachment","gill-spacing","gill-size","gill-color","stalk-shape","stalk-root","stalk-surface-above-ring","stalk-surface-below-ring","stalk-color-above-ring","stalk-color-below-ring","veil-type","veil-color","ring-number","ring-type","spore-print-color","population","habitat"],"Values":[["",`${input1}`,`${input2}`,`${input3}`,`${input4}`,`${input5}`,"",`${input7}`,`${input10}`,`${input6}`,"","","","","","","","","","","",`${input9}`,`${input8}`]]}},"GlobalParameters":{}});
+export const fetchResponse = (input1,input2,input3,input5,input6,input7,input8,input9,input10) =>{ 
+  var raw = JSON.stringify({"Inputs":{"input1":{"ColumnNames":["class","cap-shape","cap-surface","cap-color","bruises","odor","gill-attachment","gill-spacing","gill-size","gill-color","stalk-shape","stalk-root","stalk-surface-above-ring","stalk-surface-below-ring","stalk-color-above-ring","stalk-color-below-ring","veil-type","veil-color","ring-number","ring-type","spore-print-color","population","habitat"],"Values":[["",`${input1}`,`${input2}`,`${input3}`,"",`${input5}`,"",`${input7}`,`${input10}`,`${input6}`,"","","","","","","","","","","",`${input9}`,`${input8}`]]}},"GlobalParameters":{}});
   console.log(raw);
   
   var requestOptions = {
