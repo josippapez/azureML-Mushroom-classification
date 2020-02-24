@@ -8,12 +8,19 @@ class Inputs extends Component {
         capShapeInput:"",
         capSurfaceInput:"",
         capColorInput:"",
+<<<<<<< HEAD
         capBruisesInput:"",
+=======
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
         odorInput:"",
         gillColorInput:"",
         gillSpacingInput:"",
         habitatInput:"",
         populationInput:"",
+<<<<<<< HEAD
+=======
+        gillSizeInput:"",
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
         inputText1:"Cap shape",
         inputText2:"Cap surface",
         inputText3:"Cap color",
@@ -23,7 +30,13 @@ class Inputs extends Component {
         inputText7:"Gill spacing",
         inputText8:"Habitat",
         inputText9:"Population",
+<<<<<<< HEAD
         id:null,
+=======
+        inputText10:"Gill size",
+        id:null,
+        isChanged:false
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
     }
     resetId(){
         this.setState({
@@ -54,12 +67,15 @@ class Inputs extends Component {
                 inputText3:text
             })
         }
+<<<<<<< HEAD
         if(this.state.id===4){
             this.setState({
                 capBruisesInput:input,
                 inputText4:text
             })
         }
+=======
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
         if(this.state.id===5){
             this.setState({
                 odorInput:input,
@@ -90,11 +106,28 @@ class Inputs extends Component {
                 inputText9:text
             })
         }
+<<<<<<< HEAD
         this.resetId()
     }
     SubmitRequest=()=>{
         this.props.sendData(this.state.capShapeInput,this.state.capSurfaceInput,this.state.capColorInput,this.state.capBruisesInput,this.state.odorInput,this.state.gillColorInput,this.state.gillSpacingInput,this.state.habitatInput,
             this.state.populationInput);
+=======
+        if(this.state.id===10){
+            this.setState({
+                gillSizeInput:input,
+                inputText10:text
+            })
+        }
+        this.resetId();
+        this.setState({
+            isChanged : true
+        });
+    }
+    SubmitRequest=()=>{
+        this.props.sendData(this.state.capShapeInput,this.state.capSurfaceInput,this.state.capColorInput,this.state.odorInput,this.state.gillColorInput,this.state.gillSpacingInput,this.state.habitatInput,
+            this.state.populationInput,this.state.gillSizeInput);
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
     }
     render() {
         return (
@@ -168,6 +201,7 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
+<<<<<<< HEAD
                             <p>Bruises</p>
                             </div>
                             <div className="col">
@@ -186,6 +220,9 @@ class Inputs extends Component {
                         <div className="row">
                             <div className="col">
                             <p>Odor</p>
+=======
+                                <p>Odor</p>
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -209,7 +246,11 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
+<<<<<<< HEAD
                             <p>Gill color</p>
+=======
+                                <p>Gill color</p>
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -236,7 +277,11 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
+<<<<<<< HEAD
                             <p>Gill spacing</p>
+=======
+                                <p>Gill spacing</p>
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -254,7 +299,28 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
+<<<<<<< HEAD
                             <p>Habitat</p>
+=======
+                                <p>Gill size</p>
+                            </div>
+                            <div className="col">
+                        <div className="dropdown">
+                            <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onFocus={()=>{this.updateId(10)}}>
+                                {this.state.inputText10}
+                            </button>
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <p className="dropdown-item" onClick={()=>{this.updateInput("b","Broad")}}>Broad</p>
+                                <p className="dropdown-item" onClick={()=>{this.updateInput("n","Narrow")}}>Narrow</p>
+                                <p className="dropdown-item" onClick={()=>{this.updateInput("","Don't know")}}>Don't know</p>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <p>Habitat</p>
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -276,7 +342,11 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
+<<<<<<< HEAD
                             <p>Population</p>
+=======
+                                <p>Population</p>
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -296,7 +366,11 @@ class Inputs extends Component {
                         </div>
                         </div>
                         <div className="topbuffer">
+<<<<<<< HEAD
                             <button className="btn-lg btn-success" onClick={this.SubmitRequest}>
+=======
+                            <button className="btn-lg btn-success" disabled={this.state.isChanged ? false : true} onClick={this.SubmitRequest}>
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                                 Submit
                             </button>
                         </div>
@@ -326,7 +400,11 @@ const mapStateToProps = state => {
   
   const mapStateToDispatch = dispatch => {
     return {
+<<<<<<< HEAD
       sendData: (input1,input2,input3,input4,input5,input6,input7,input8,input9) => dispatch(fetchResponse(input1,input2,input3,input4,input5,input6,input7,input8,input9))
+=======
+      sendData: (input1,input2,input3,input5,input6,input7,input8,input9,input10) => dispatch(fetchResponse(input1,input2,input3,input5,input6,input7,input8,input9,input10))
+>>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
     };
 };
 
