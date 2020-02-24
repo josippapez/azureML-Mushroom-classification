@@ -15,3 +15,22 @@ code {
 .topbuffer{
   margin-top:20px;
 }
+#\30 {
+  margin-right: 0;
+  background-color: rgb(81, 255, 0);
+}
+#\31 {
+  margin-right: 0;
+  background-color: rgb(255, 0, 0);
+}
+.animation{
+  -webkit-animation: filling 2s;
+  animation: filling 2s;
+  animation-fill-mode: forwards;
+  --width:0%;
+}
+
+@keyframes filling{
+  from{width: 0%;}
+  to{width: var(--width);}
+}

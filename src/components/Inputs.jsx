@@ -8,19 +8,12 @@ class Inputs extends Component {
         capShapeInput:"",
         capSurfaceInput:"",
         capColorInput:"",
-<<<<<<< HEAD
-        capBruisesInput:"",
-=======
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
         odorInput:"",
         gillColorInput:"",
         gillSpacingInput:"",
         habitatInput:"",
         populationInput:"",
-<<<<<<< HEAD
-=======
         gillSizeInput:"",
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
         inputText1:"Cap shape",
         inputText2:"Cap surface",
         inputText3:"Cap color",
@@ -30,13 +23,11 @@ class Inputs extends Component {
         inputText7:"Gill spacing",
         inputText8:"Habitat",
         inputText9:"Population",
-<<<<<<< HEAD
-        id:null,
-=======
         inputText10:"Gill size",
         id:null,
-        isChanged:false
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
+        isChanged:false,
+        ratingsAnimation:false,
+        ratingsVisibility:false,
     }
     resetId(){
         this.setState({
@@ -67,15 +58,6 @@ class Inputs extends Component {
                 inputText3:text
             })
         }
-<<<<<<< HEAD
-        if(this.state.id===4){
-            this.setState({
-                capBruisesInput:input,
-                inputText4:text
-            })
-        }
-=======
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
         if(this.state.id===5){
             this.setState({
                 odorInput:input,
@@ -106,13 +88,6 @@ class Inputs extends Component {
                 inputText9:text
             })
         }
-<<<<<<< HEAD
-        this.resetId()
-    }
-    SubmitRequest=()=>{
-        this.props.sendData(this.state.capShapeInput,this.state.capSurfaceInput,this.state.capColorInput,this.state.capBruisesInput,this.state.odorInput,this.state.gillColorInput,this.state.gillSpacingInput,this.state.habitatInput,
-            this.state.populationInput);
-=======
         if(this.state.id===10){
             this.setState({
                 gillSizeInput:input,
@@ -127,7 +102,14 @@ class Inputs extends Component {
     SubmitRequest=()=>{
         this.props.sendData(this.state.capShapeInput,this.state.capSurfaceInput,this.state.capColorInput,this.state.odorInput,this.state.gillColorInput,this.state.gillSpacingInput,this.state.habitatInput,
             this.state.populationInput,this.state.gillSizeInput);
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
+    }
+    ratings=()=>{
+        setTimeout(()=>{
+            this.setState({
+                ratingsAnimation:true,
+                ratingsVisibility:true
+            })
+        },100);
     }
     render() {
         return (
@@ -201,28 +183,7 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-<<<<<<< HEAD
-                            <p>Bruises</p>
-                            </div>
-                            <div className="col">
-                        <div className="dropdown">
-                            <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onFocus={()=>{this.updateId(4)}}>
-                                {this.state.inputText4}
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <p className="dropdown-item" onClick={()=>{this.updateInput("t","Bruises")}}>Bruises</p>
-                                <p className="dropdown-item" onClick={()=>{this.updateInput("f","No bruises")}}>No bruises</p>
-                                <p className="dropdown-item" onClick={()=>{this.updateInput("","Don't know")}}>Don't know</p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                            <p>Odor</p>
-=======
                                 <p>Odor</p>
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -246,11 +207,7 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-<<<<<<< HEAD
-                            <p>Gill color</p>
-=======
                                 <p>Gill color</p>
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -277,11 +234,7 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-<<<<<<< HEAD
-                            <p>Gill spacing</p>
-=======
                                 <p>Gill spacing</p>
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -299,9 +252,6 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-<<<<<<< HEAD
-                            <p>Habitat</p>
-=======
                                 <p>Gill size</p>
                             </div>
                             <div className="col">
@@ -320,7 +270,6 @@ class Inputs extends Component {
                         <div className="row">
                             <div className="col">
                                 <p>Habitat</p>
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -342,11 +291,7 @@ class Inputs extends Component {
                         </div>
                         <div className="row">
                             <div className="col">
-<<<<<<< HEAD
-                            <p>Population</p>
-=======
                                 <p>Population</p>
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                             </div>
                             <div className="col">
                         <div className="dropdown">
@@ -366,22 +311,32 @@ class Inputs extends Component {
                         </div>
                         </div>
                         <div className="topbuffer">
-<<<<<<< HEAD
-                            <button className="btn-lg btn-success" onClick={this.SubmitRequest}>
-=======
                             <button className="btn-lg btn-success" disabled={this.state.isChanged ? false : true} onClick={this.SubmitRequest}>
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
                                 Submit
                             </button>
                         </div>
                     </div>
-                    <div className="col">
-                        <h1>Results:</h1>
+                    <div className={"col"}>
+                        <h1 className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Results:</h1>
                         {this.props.response.ColumnNames && this.props.response.ColumnNames.length>0 &&
                             <div>
-                                <p>{this.props.response.ColumnNames[0]}: {this.props.response.Values[0][0] * 100}%</p>
-                                <p>{this.props.response.ColumnNames[1]}: {this.props.response.Values[0][1] * 100}%</p>
-                                <p>{this.props.response.ColumnNames[2]}: {this.props.response.Values[0][2]==='e' ? ("Edible") : ("Poisonous")}</p>
+                                <p className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Your mushrom is: {this.props.response.Values[0][2]==='e' ? ("Edible") : ("Poisonous")}</p>
+                                {this.props.response.Values[0] && this.props.response.Values[0].length>0 && this.props.response.Values[0].map((rating,i)=>{
+                                    if(rating !== "e" && rating !== 'p'){
+                                        return(
+                                            <li ratings={this.ratings()}
+                                            style={{'--width':rating * 100+'%'}} 
+                                            className={"list-group-item text-capitalize p-2"+(this.state.ratingsAnimation ? (" animation"): ("")) + (this.state.ratingsVisibility ? ("") : (" invisible"))} 
+                                            key={rating}
+                                            id={i}>
+                                                {rating*100}%
+                                            </li>
+                                        )
+                                    }
+                                    else{
+                                        return null;
+                                    }
+                                })}
                             </div> 
                         }
                         <LoadingIndicator/>
@@ -400,11 +355,7 @@ const mapStateToProps = state => {
   
   const mapStateToDispatch = dispatch => {
     return {
-<<<<<<< HEAD
-      sendData: (input1,input2,input3,input4,input5,input6,input7,input8,input9) => dispatch(fetchResponse(input1,input2,input3,input4,input5,input6,input7,input8,input9))
-=======
       sendData: (input1,input2,input3,input5,input6,input7,input8,input9,input10) => dispatch(fetchResponse(input1,input2,input3,input5,input6,input7,input8,input9,input10))
->>>>>>> ef9685f1eb3af61685b9a7ed68c6437a9dd20b00
     };
 };
 
