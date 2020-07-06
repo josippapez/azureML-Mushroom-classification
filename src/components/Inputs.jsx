@@ -158,167 +158,170 @@ class Inputs extends Component {
         ];
         return (
             <div className="container" style={{ marginLeft: "0", marginRight: "0" }}>
-                <div className="row">
-                    <div className="col-9">
-                        <div className="row-12">
-                            <div className="row">
-                                <div className="col">
-                                    <p>Odor</p>
+                <div className="jumbotron-fluid" style={{ padding: 50, fontSize: 64}}>Mushroom classification</div>
+                <div >
+                    <div className="row">
+                        <div className="col-9">
+                            <div className="row-12">
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Odor</p>
+                                    </div>
+                                    <div className="col">
+                                        <div className="dropdown">
+                                            <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                {this.state.odorInputDefault}
+                                            </button>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {odorInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("odorInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="col">
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Spore print color</p>
+                                    </div>
+                                    <div className="col">
+                                        <div className="dropdown">
+                                            <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                {this.state.sporePrintColorinputDefault}
+                                            </button>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {sporePrintColorInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("sporePrintColorinput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Gill color</p>
+                                    </div>
+                                    <div className="col">
                                     <div className="dropdown">
                                         <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {this.state.odorInputDefault}
+                                            {this.state.gillColorInputDefault}
                                         </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {odorInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("odorInput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {gillColorInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("gillColorInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Spore print color</p>
-                                </div>
-                                <div className="col">
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Ring type</p>
+                                    </div>
+                                    <div className="col">
                                     <div className="dropdown">
                                         <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            {this.state.sporePrintColorinputDefault}
+                                            {this.state.ringTypeInputDefault}
                                         </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {sporePrintColorInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("sporePrintColorinput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {ringTypeInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("ringTypeInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Gill color</p>
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Stalk surface abowe ring</p>
+                                    </div>
+                                    <div className="col">
+                                    <div className="dropdown">
+                                        <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {this.state.stalkSurfaceAboveRingInputDefault}
+                                        </button>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {stalkSurfaceAboveRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkSurfaceAboveRingInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="col">
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Stalk surface below ring</p>
+                                    </div>
+                                    <div className="col">
+                                    <div className="dropdown">
+                                        <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {this.state.stalkSurfaceBelowRingInputDefault}
+                                        </button>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {stalkSurfaceBelowRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkSurfaceBelowRingInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Stalk color above ring</p>
+                                    </div>
+                                    <div className="col">
+                                    <div className="dropdown">
+                                        <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {this.state.stalkColorAboveRingInputDefault}
+                                        </button>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {stalkColorAboveRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkColorAboveRingInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Stalk color below ring</p>
+                                    </div>
+                                    <div className="col">
+                                    <div className="dropdown">
+                                        <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {this.state.stalkColorBelowRingInputDefault}
+                                        </button>
+                                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            {stalkColorBelowRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkColorBelowRingInput", input.input, input.text)}}>{input.text}</p>})}
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <p>Gill size</p>
+                                    </div>
+                                    <div className="col">
                                 <div className="dropdown">
                                     <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {this.state.gillColorInputDefault}
+                                        {this.state.gillSizeInputDefault}
                                     </button>
                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {gillColorInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("gillColorInput", input.input, input.text)}}>{input.text}</p>})}
+                                        {gillSizeInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("gillSizeInput", input.input, input.text)}}>{input.text}</p>})}
                                     </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Ring type</p>
                                 </div>
-                                <div className="col">
-                                <div className="dropdown">
-                                    <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {this.state.ringTypeInputDefault}
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {ringTypeInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("ringTypeInput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Stalk surface abowe ring</p>
-                                </div>
-                                <div className="col">
-                                <div className="dropdown">
-                                    <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {this.state.stalkSurfaceAboveRingInputDefault}
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {stalkSurfaceAboveRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkSurfaceAboveRingInput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Stalk surface below ring</p>
-                                </div>
-                                <div className="col">
-                                <div className="dropdown">
-                                    <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {this.state.stalkSurfaceBelowRingInputDefault}
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {stalkSurfaceBelowRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkSurfaceBelowRingInput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Stalk color above ring</p>
-                                </div>
-                                <div className="col">
-                                <div className="dropdown">
-                                    <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {this.state.stalkColorAboveRingInputDefault}
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {stalkColorAboveRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkColorAboveRingInput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Stalk color below ring</p>
-                                </div>
-                                <div className="col">
-                                <div className="dropdown">
-                                    <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        {this.state.stalkColorBelowRingInputDefault}
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        {stalkColorBelowRingInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("stalkColorBelowRingInput", input.input, input.text)}}>{input.text}</p>})}
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <p>Gill size</p>
-                                </div>
-                                <div className="col">
-                            <div className="dropdown">
-                                <button className="btn-lg btn-secondary dropdown-toggle btn-block" type="button" id="dropdownMenuButton5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {this.state.gillSizeInputDefault}
-                                </button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    {gillSizeInputs.map(input => {return <p className="dropdown-item" onClick={()=>{this.updateInput("gillSizeInput", input.input, input.text)}}>{input.text}</p>})}
-                                </div>
-                                </div>
-                            </div>
-                            </div>
 
-                            <div className="topbuffer">
-                                <button className="btn-lg btn-success" disabled={this.state.isChanged ? false : true} onClick={this.SubmitRequest}>
-                                    Submit
-                                </button>
+                                <div className="topbuffer">
+                                    <button className="btn-lg btn-success" disabled={this.state.isChanged ? false : true} onClick={this.SubmitRequest}>
+                                        Submit
+                                    </button>
+                                </div>
+                                </div>
                             </div>
-                            </div>
+                        <div className="col-3">
+                            <h1 className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Results:</h1>
+                            {this.props.response.Values && this.props.response.Values.length>0 &&
+                                <div>
+                                    <p className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Your mushrom is: {this.props.response.Values[0][0] ==='e' ? ("Edible") : ("Poisonous")}</p>
+                                    <li
+                                    style={{'--width':(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(2)+'%'}}
+                                    className={"list-group-item text-capitalize p-2"+(this.state.ratingsAnimation ? (" animation"): ("")) + (this.state.ratingsVisibility ? ("") : (" invisible"))}
+                                    key={this.props.response.Values[0][0]}
+                                    id={this.props.response.Values[0][0]}>
+                                        {(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(2)}%
+                                    </li>
+                                </div>
+                            }
+                            <LoadingIndicator/>
                         </div>
-                    <div className="col-3">
-                        <h1 className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Results:</h1>
-                        {this.props.response.Values && this.props.response.Values.length>0 &&
-                            <div>
-                                <p className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Your mushrom is: {this.props.response.Values[0][0] ==='e' ? ("Edible") : ("Poisonous")}</p>
-                                <li
-                                style={{'--width':(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(2)+'%'}}
-                                className={"list-group-item text-capitalize p-2"+(this.state.ratingsAnimation ? (" animation"): ("")) + (this.state.ratingsVisibility ? ("") : (" invisible"))}
-                                key={this.props.response.Values[0][0]}
-                                id={this.props.response.Values[0][0]}>
-                                    {(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(1)}%
-                                </li>
-                            </div>
-                        }
-                        <LoadingIndicator/>
                     </div>
                 </div>
             </div>
