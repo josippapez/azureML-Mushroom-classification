@@ -314,7 +314,7 @@ class Inputs extends Component {
                                 className={"list-group-item text-capitalize p-2"+(this.state.ratingsAnimation ? (" animation"): ("")) + (this.state.ratingsVisibility ? ("") : (" invisible"))}
                                 key={this.props.response.Values[0][0]}
                                 id={this.props.response.Values[0][0]}>
-                                    {(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(2)}%
+                                    {(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(1)}%
                                 </li>
                             </div>
                         }

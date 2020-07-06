@@ -23,7 +23,7 @@ export const fetchResponse = (odor,sporePrintColor,gillColor,ringType,stalkSurfa
     redirect: 'follow',
   };
   return (dispatch,getState)=>{
-        var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        var proxyUrl = 'https://thingproxy.freeboard.io/fetch/',
         targetUrl = 'https://ussouthcentral.services.azureml.net/workspaces/4d31dfc7580248b6bf894724bf914b41/services/dc20a531b1ad4b66a44bb22ec54649a8/execute?api-version=2.0&details=true'
         trackPromise(
           fetch(proxyUrl + targetUrl, requestOptions)
