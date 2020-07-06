@@ -27,6 +27,11 @@ class Inputs extends Component {
         ratingsAnimation:false,
         ratingsVisibility:false,
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.response !== this.props.response) {
+            this.ratings();
+        }
+    }
     updateInput=(inputId, input, text)=>{
         this.setState({
             [inputId]:input,
@@ -52,8 +57,8 @@ class Inputs extends Component {
     ratings=()=>{
         setTimeout(()=>{
             this.setState({
-                ratingsAnimation:true,
-                ratingsVisibility:true
+                ratingsVisibility:true,
+                ratingsAnimation: true,
             })
         },100);
     }
@@ -301,25 +306,16 @@ class Inputs extends Component {
                         </div>
                     <div className="col-3">
                         <h1 className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Results:</h1>
-                        {this.props.response.ColumnNames && this.props.response.ColumnNames.length>0 &&
+                        {this.props.response.Values && this.props.response.Values.length>0 &&
                             <div>
-                                <p className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Your mushrom is: {this.props.response.Values[0][2]==='e' ? ("Edible") : ("Poisonous")}</p>
-                                {this.props.response.Values[0] && this.props.response.Values[0].length>0 && this.props.response.Values[0].map((rating,i)=>{
-                                    if(rating !== "e" && rating !== 'p'){
-                                        return(
-                                            <li ratings={this.ratings()}
-                                            style={{'--width':rating * 100+'%'}}
-                                            className={"list-group-item text-capitalize p-2"+(this.state.ratingsAnimation ? (" animation"): ("")) + (this.state.ratingsVisibility ? ("") : (" invisible"))}
-                                            key={rating}
-                                            id={i}>
-                                                {rating*100}%
-                                            </li>
-                                        )
-                                    }
-                                    else{
-                                        return null;
-                                    }
-                                })}
+                                <p className={(this.state.ratingsVisibility ? ("") : (" invisible"))}>Your mushrom is: {this.props.response.Values[0][0] ==='e' ? ("Edible") : ("Poisonous")}</p>
+                                <li
+                                style={{'--width':(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(2)+'%'}}
+                                className={"list-group-item text-capitalize p-2"+(this.state.ratingsAnimation ? (" animation"): ("")) + (this.state.ratingsVisibility ? ("") : (" invisible"))}
+                                key={this.props.response.Values[0][0]}
+                                id={this.props.response.Values[0][0]}>
+                                    {(this.props.response.Values[0][0] ==='e' ? 100 - (this.props.response.Values[0][1]*100) : Math.abs(50 - (this.props.response.Values[0][1]*100))*2).toFixed(2)}%
+                                </li>
                             </div>
                         }
                         <LoadingIndicator/>

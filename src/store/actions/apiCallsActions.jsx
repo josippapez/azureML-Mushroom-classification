@@ -20,11 +20,11 @@ export const fetchResponse = (odor,sporePrintColor,gillColor,ringType,stalkSurfa
     method: 'POST',
     headers: myHeaders,
     body: raw,
-    redirect: 'follow'
+    redirect: 'follow',
   };
   return (dispatch,getState)=>{
-        var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://ussouthcentral.services.azureml.net/workspaces/4d31dfc7580248b6bf894724bf914b41/services/762baf005e81497dbcd774b1c397e735/execute?api-version=2.0&details=true'
+        var proxyUrl = 'https://thingproxy.freeboard.io/fetch/',
+        targetUrl = 'https://ussouthcentral.services.azureml.net/workspaces/4d31dfc7580248b6bf894724bf914b41/services/dc20a531b1ad4b66a44bb22ec54649a8/execute?api-version=2.0&details=true'
         trackPromise(
           fetch(proxyUrl + targetUrl, requestOptions)
               .then(response => response.json())
